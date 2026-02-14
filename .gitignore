@@ -1,0 +1,23 @@
+# Environment
+.env
+.env.*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Claude Code session files
+.claude/settings.local.json
+.scratchpad/
+
+# Node
+node_modules/
+
+# Temporary
+*.tmp
+*.log
