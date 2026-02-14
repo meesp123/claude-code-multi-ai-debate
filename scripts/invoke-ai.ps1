@@ -45,6 +45,7 @@ function Start-PipelineCli {
 switch ($CLI) {
     'codex' {
         # codex uses `exec - < file` redirect (not pipe) — reliable via cmd /c
+        # sandbox bypass required: codex exec needs file I/O without interactive approval prompts
         $flags = '--dangerously-bypass-approvals-and-sandbox --color never'
         if ($Model) { $flags += " --model $Model" }
         if ($ReasoningEffort) { $flags += " --config model_reasoning_effort=`"$ReasoningEffort`"" }

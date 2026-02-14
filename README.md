@@ -16,7 +16,7 @@ CLI tools.
 - **Internal-only mode**: Debate with just advocate + critic (no external CLI needed)
 - **Verify-Before-Cite**: Agents must Grep-verify any numbers before citing
 - **WebSearch integration**: Agents search the web for evidence before arguing
-- **Configurable presets**: quick (5 min), balanced (15 min), deep (30 min)
+- **Configurable presets**: balanced (15 min), deep (30 min)
 - **READY handshake**: Agents confirm tool availability before debate starts
 - **Word count enforcement**: 300-word limit with self-check + proxy truncation
 
@@ -146,7 +146,8 @@ You only need these if you want to use `--with codex,gemini,...` to bring in ext
 | CLI | Install Command | Auth Command | Verify |
 |--------|-------------------------------------|-------------|-----------------|
 | codex | `npm i -g @openai/codex` | `codex auth` | `codex --version` |
-| gemini | `npm i -g @anthropic-ai/claude-code` | `gemini auth` | `gemini --version` |
+| pi | `npm i -g @mariozechner/pi-coding-agent` | `pi auth` | `pi --version` |
+| gemini | `npm i -g @google/gemini-cli@latest` | `gemini auth` | `gemini --version` |
 | qwen | `npm i -g qwen-cli` | `qwen auth` | `qwen --version` |
 | kimi | `pip install kimi-cli` | `kimi auth` | `kimi --version` |
 
@@ -157,6 +158,7 @@ You only need these if you want to use `--with codex,gemini,...` to bring in ext
 ```powershell
 # Test which CLIs are available
 codex --version 2>$null && Write-Host "codex: OK" || Write-Host "codex: NOT INSTALLED"
+pi --version 2>$null && Write-Host "pi: OK" || Write-Host "pi: NOT INSTALLED"
 gemini --version 2>$null && Write-Host "gemini: OK" || Write-Host "gemini: NOT INSTALLED"
 qwen --version 2>$null && Write-Host "qwen: OK" || Write-Host "qwen: NOT INSTALLED"
 kimi --version 2>$null && Write-Host "kimi: OK" || Write-Host "kimi: NOT INSTALLED"
@@ -229,7 +231,7 @@ Claude Code can spawn multiple AI agents that work together. Each agent has:
 ### Full options
 
 ```
-/debate <topic> [--files <path1,path2>] [--with <cli1,cli2>] [--preset <quick|balanced|deep>] [--rounds <2|3>] [--effort <low|medium|high|xhigh>]
+/debate <topic> [--files <path1,path2>] [--with <cli1,cli2>] [--preset <balanced|deep>] [--rounds <2|3>] [--effort <low|medium|high|xhigh>]
 ```
 
 ### Parameters
@@ -247,7 +249,6 @@ Claude Code can spawn multiple AI agents that work together. Each agent has:
 
 | Preset | Rounds | Timeout | Best for |
 |----------|--------|---------|---------------------------|
-| `quick` | 2 | 5 min | Simple design decisions |
 | `balanced` | 2 | 15 min | Most technical debates |
 | `deep` | 3 | 30 min | Architecture decisions |
 

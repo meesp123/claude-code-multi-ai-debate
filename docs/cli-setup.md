@@ -24,18 +24,26 @@ OpenAI's coding agent CLI.
 
 ---
 
-## pi (OpenAI-compatible)
+## pi (Multi-Provider)
 
-Lightweight wrapper for OpenAI models with tool support.
+Minimal terminal coding agent supporting multiple AI providers via OAuth or API key.
 
-1. **Install**: `npm install -g @anthropic-ai/claude-code` (may be bundled) or check the pi CLI's own repo
-2. **Auth**: Set `OPENAI_API_KEY` environment variable, or run `pi auth`
+1. **Install**: `npm install -g @mariozechner/pi-coding-agent`
+2. **Auth**: Run `pi`, then type `/login` to authenticate with any supported provider
 3. **Verify**: `pi --version`
 
+### Supported Providers (OAuth Subscriptions)
+- OpenAI ChatGPT Plus/Pro (Codex)
+- Anthropic Claude Pro/Max
+- GitHub Copilot
+- Google Gemini CLI
+
 ### Notes
-- Default model: `gpt-5.3-codex`
+- Default model depends on provider (e.g. `gpt-5.3-codex` for OpenAI Codex)
 - Supports `--thinking` for reasoning effort levels
 - Uses pipe input (`Get-Content | pi`)
+- Also supports API keys: OpenAI, Anthropic, Google, Azure, Groq, xAI, OpenRouter, and more
+- Custom providers via `~/.pi/agent/models.json`
 
 ---
 
@@ -43,7 +51,7 @@ Lightweight wrapper for OpenAI models with tool support.
 
 Google's Gemini CLI.
 
-1. **Install**: `npm install -g @anthropic-ai/claude-code` (may be bundled) or `npm install -g gemini-cli`
+1. **Install**: `npm install -g @google/gemini-cli@latest`
 2. **Auth**: `gemini auth` (Google OAuth)
 3. **Verify**: `gemini --version`
 
