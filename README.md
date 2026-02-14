@@ -44,6 +44,25 @@ claude    # Opens Claude Code, follow login prompts
 
 You need a **Claude Pro/Max subscription** for agent team features (multiple agents running simultaneously).
 
+### Enable Agent Teams (Required)
+
+Agent teams are **experimental and disabled by default**. Add this to your `~/.claude/settings.json`:
+
+```json
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  }
+}
+```
+
+Or set it temporarily via environment variable:
+```powershell
+$env:CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS = "1"
+```
+
+> **Display mode** (optional): On macOS/Linux with tmux or iTerm2, agent teams can show in split panes. On Windows, teammates run in-process (use `Shift+Up/Down` to switch between them).
+
 ### 2. Node.js (Required for Claude Code + most external CLIs)
 
 ```powershell
@@ -63,17 +82,7 @@ git --version     # Need 2.x+
 winget install Git.Git
 ```
 
-### 4. GitHub CLI (Optional — for PR/review workflow)
-
-```powershell
-gh --version
-
-# If not installed
-winget install GitHub.cli
-gh auth login     # Follow browser prompts
-```
-
-### 5. Python 3.10+ (Only if using kimi CLI)
+### 4. Python 3.10+ (Only if using kimi CLI)
 
 ```powershell
 python --version
