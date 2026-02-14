@@ -14,5 +14,5 @@ Multi-AI debate skill for Claude Code. Uses Claude Code agent teams to orchestra
 ```
 
 ## Platform
-- Windows 11 + PowerShell 5.1+
+- Windows + PowerShell 5.1+
 - Claude Code with agent team support

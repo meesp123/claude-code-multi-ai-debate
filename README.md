@@ -5,7 +5,7 @@ Orchestrates a team of Claude Code agents (advocate, critic, proxy) to debate an
 technical topic, optionally bringing in external AI perspectives from 5 different
 CLI tools.
 
-> **Platform**: Developed and tested on **Windows 11 + PowerShell 5.1+**.
+> **Platform**: Developed and tested on **Windows + PowerShell 5.1+**.
 > Internal-only debates (no `--with` flag) work on all platforms.
 > External CLI integration (`--with`) requires PowerShell (Windows native or `pwsh` on Mac/Linux).
 
@@ -257,7 +257,7 @@ Claude Code can spawn multiple AI agents that work together. Each agent has:
 
 | Platform | Internal Debate | External CLI (`--with`) | Notes |
 |-----------|---------------|----------------------|-------------------------------|
-| Windows 11 | ✅ Full | ✅ Full | Primary development platform |
+| Windows | ✅ Full | ✅ Full | Primary development platform |
 | macOS | ✅ Full | ⚠️ Needs `pwsh` | `brew install powershell` |
 | Linux | ✅ Full | ⚠️ Needs `pwsh` | Install PowerShell Core |
 
