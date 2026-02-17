@@ -1,4 +1,4 @@
-# claude-code-multi-ai-debate
+# claude-code-agent-team-debate
 
 Multi-AI structured debate skill for [Claude Code](https://claude.com/claude-code).
 Orchestrates a team of Claude Code agents (advocate, critic, proxy) to debate any
